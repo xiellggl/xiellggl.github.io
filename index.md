@@ -20,6 +20,8 @@
             ctx.put("serviceId", ctx.get("copyServiceId"));
             ctx.remove("copyServiceId");
         }
+如果以上方法不行，那么你可能还要把这句删掉，或者延迟执行
+httpClient.close();
   
 ```markdown
 Syntax highlighted code block
