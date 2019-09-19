@@ -9,18 +9,26 @@
 #### 第九章：日志聚合中使用
 #### 第6章中：SpecialRoutesFilter中实际返回的是根据service id进行路由的结果，不是我们真正想要的结果，RibbonRoutingFilter始终会进行过滤，而覆盖掉你自己forward的结果，有两种解决方法
 1. 使用静态路由，并设置context.setRouteHost(null);防止SimpleHostRoutingFilter对结果覆盖
-2. 依旧使用service id进行路由，不过在进入到下一个route类型filter之前设置
-```
+2. 依旧使用service id进行路由，不过在进入到下一个route类型filter之前设置,然后在ResponseFilter中补回
+
+下面给出第二种方法实现
+
+在进入到下一个route类型filter之前设置
+```diff
             Object serviceId = context.get("serviceId");
             context.remove("serviceId");
-            context.put("copyServiceId", serviceId);
-然后在ResponseFilter中补回
- if (ctx.get("serviceId") == null && ctx.get("copyServiceId") != null) {
+            context.put("copyServiceId", serviceId);          
+``` 
+在ResponseFilter中补回   
+```diff                    
+            if (ctx.get("serviceId") == null && ctx.get("copyServiceId") != null) {
             ctx.put("serviceId", ctx.get("copyServiceId"));
             ctx.remove("copyServiceId");
         }
+```
 如果以上方法不行，那么你可能还要把这句删掉，或者延迟执行
-httpClient.close();
+```diff
+            httpClient.close();
 ```
 #### 第十章:部署微服务
 
