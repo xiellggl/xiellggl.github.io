@@ -41,3 +41,7 @@ jenkins作为CI要注意的问题:
 
 jenkins的插件下载慢，在线下如果不行的话，就设置代理，用upload phi文件方式的话太麻烦了，还要装几个依赖插件，而且我猜每个依赖插件都要clone插件项目自己build。。。
 今天看了一下昨天白嫖的腾讯云的redis，是不给外网连接，也没什么所谓了，只是想连一下而已。
+现在是半夜02:49分，终于把jenkins自动构建弄好了，弄了那么久
+1. 自己的代理处理问题，还以为是jenkins怎么本地访问都这么慢
+2. 处理jenkins时区问题，我按照官网的试了，jenkins日志还是差了8小时，官网解答地址`https://wiki.jenkins.io/display/JENKINS/Change+time+zone`
+3. 配置github的webhooks的payload url，配了好久，最后根据知乎这篇`https://zhuanlan.zhihu.com/p/34758963`配好了，注意当你选择呢Trigger builds remotely时，注意看下面的文字，他有告诉你url是什么，我就是一开始没注意以为不是什么重要的东西，后来才发现，然后TOKEN_NAME就是你上面的AUTHENTICATION TOKEN
