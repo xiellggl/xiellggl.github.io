@@ -44,4 +44,10 @@ jenkins的插件下载慢，在线下如果不行的话，就设置代理，用u
 现在是半夜02:49分，终于把jenkins自动构建弄好了，弄了那么久
 1. 自己的代理处理问题，还以为是jenkins怎么本地访问都这么慢
 2. 处理jenkins时区问题，我按照官网的试了，jenkins日志还是差了8小时，官网解答地址`https://wiki.jenkins.io/display/JENKINS/Change+time+zone`
-3. 配置github的webhooks的payload url，配了好久，最后根据知乎这篇`https://zhuanlan.zhihu.com/p/34758963`配好了，注意当你选择呢Trigger builds remotely时，注意看下面的文字，他有告诉你url是什么，我就是一开始没注意以为不是什么重要的东西，后来才发现，然后TOKEN_NAME就是你上面的AUTHENTICATION TOKEN
+3. 配置github的webhooks的payload url，配了好久，最后根据知乎这篇`https://zhuanlan.zhihu.com/p/34758963`配好了，注意当你选择呢Trigger builds remotely时，注意看下面的文字，他有告诉你url是什么，我就是一开始没注意以为不是什么重要的东西，后来才发现，然后TOKEN_NAME就是你上面的AUTHENTICATION TOKEN，到这里还并没有弄好，postman直接访问是可以的，但是github还是不行，啊啊啊！
+4. 现在是半夜5点，问题3找到根本原因了，我payload url填的是127.0.0.1啊，我的发，github怎么知道127.0.0.1是什么鬼！
+两种解决办法：
+
+            1. 用ngrok暴露本地ip到公网，他会返回像`http://3b2db437.ngrok.io`的url给你，填入到github中
+            
+            2. 上云自己弄一个服务器当jenkins服务器
