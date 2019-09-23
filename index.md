@@ -71,4 +71,4 @@ You can download a tarball and build from source, or use a 3rd-party repository 
 
 ##### 自己构建jenkins镜像
 因为现在是白嫖的，十有八九我是不会续费的，那我肯定还是要继续研究微服务的，所以决定弄个镜像，就不用到时再配置
-我晚点会把配置发上来
+我晚点会把配置发上来，好像插件还是要自己装哎
