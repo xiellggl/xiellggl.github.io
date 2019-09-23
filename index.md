@@ -1,13 +1,13 @@
-## xiell个人博客
+# xiell个人博客
 写个博客纯属是交流一下
-### spring微服务实战
+## spring微服务实战
 主要是说按照书上没有跑通，我自己的解决办法
 父项目地址：https://github.com/xiellggl/mis-parent.git
 说明：
 1. 书上源码是同一个仓库，这里是用了submodule
 2. 书上没有对docker和docker-compose的说明，而第九章后面是以这个为前提的
-#### 第九章：日志聚合中使用
-#### 第6章中：SpecialRoutesFilter中实际返回的是根据service id进行路由的结果，不是我们真正想要的结果，RibbonRoutingFilter始终会进行过滤，而覆盖掉你自己forward的结果，有两种解决方法
+### 第九章：日志聚合中使用
+### 第6章中：SpecialRoutesFilter中实际返回的是根据service id进行路由的结果，不是我们真正想要的结果，RibbonRoutingFilter始终会进行过滤，而覆盖掉你自己forward的结果，有两种解决方法
 1. 使用静态路由，并设置context.setRouteHost(null);防止SimpleHostRoutingFilter对结果覆盖
 2. 依旧使用service id进行路由，不过在进入到下一个route类型filter之前设置,然后在ResponseFilter中补回
 
@@ -30,10 +30,12 @@
 ```diff
             httpClient.close();
 ```
-#### 第十章:部署微服务
+### 第十章:部署微服务
 
 终于到部署了，当我在兴致冲冲准备白嫖亚马逊，然后又终于能把东西扔上云，我也是用过云的人了，发现要信用卡才能注册，那么没有信用卡的怎么办呢？
 大家可以到阿里云和腾讯云找免费的对应服务，一般在首页找找就会找到，找不到的时候你可以根据关键字`免费redis 阿里云`之类的去搜，我白嫖了阿里云和腾讯云硬是把书上的基础服务弄齐了。
+
+#### jenkins
 
 我没有跟书上一样，使用travis作为CI工具，原因是我觉得国内大多用jenkins
 
@@ -66,3 +68,7 @@ You can download a tarball and build from source, or use a 3rd-party repository 
 ```
 
 红色部分意思就是通常是旧的版本
+
+##### 自己构建jenkins镜像
+因为现在是白嫖的，十有八九我是不会续费的，那我肯定还是要继续研究微服务的，所以决定弄个镜像，就不用到时再配置
+我晚点会把配置发上来
