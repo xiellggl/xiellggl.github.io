@@ -71,4 +71,8 @@ You can download a tarball and build from source, or use a 3rd-party repository 
 
 ##### 自己构建jenkins镜像
 因为现在是白嫖的，十有八九我是不会续费的，那我肯定还是要继续研究微服务的，所以决定弄个镜像，就不用到时再配置
-我晚点会把配置发上来，好像插件还是要自己装哎
+我晚点会把配置发上来，好像插件还是要自己装哎，最后决定使用镜像，然后挂载需要的东西，比如maven和git
+
+然后将freestyle项目改用maven项目，需要下一个maven integration插件，然后还要下maven，建议使用自动安装。在使用jenkins镜像的情况下，自己安装还要挂载目录。
+
+接下来是设置子模块自动maven和docker构建，目前只能是指定某一子模块进行构建，我也没看到，递归构建子模块的选项
