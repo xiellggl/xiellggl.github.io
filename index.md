@@ -77,4 +77,8 @@ You can download a tarball and build from source, or use a 3rd-party repository 
 
 接下来是设置子模块自动maven和docker构建，目前只能是指定某一子模块进行构建，我也没看到，递归构建子模块的选项
 
-jenkins默认用户是uid=1000，你也可以在启动容器时使用-u更改
+jenkins默认用户是uid=1000，你也可以在启动容器时使用-u更改，当显示
+```
+I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:80: Permission denied
+```
+这个错误时，表明jenkins镜像对/var/run/docker.sock没有权限，可使用chown 1000:1000 /var/run/docker.sock解决
