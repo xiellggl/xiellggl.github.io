@@ -76,3 +76,5 @@ You can download a tarball and build from source, or use a 3rd-party repository 
 然后将freestyle项目改用maven项目，需要下一个maven integration插件，然后还要下maven，建议使用自动安装。在使用jenkins镜像的情况下，自己安装还要挂载目录。
 
 接下来是设置子模块自动maven和docker构建，目前只能是指定某一子模块进行构建，我也没看到，递归构建子模块的选项
+
+jenkins默认用户是uid=1000，你也可以在启动容器时使用-u更改
