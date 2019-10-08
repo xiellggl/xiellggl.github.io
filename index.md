@@ -76,7 +76,8 @@ You can download a tarball and build from source, or use a 3rd-party repository 
 然后将freestyle项目改用maven项目，需要下一个maven integration插件，然后还要下maven，建议使用自动安装。在使用jenkins镜像的情况下，自己安装还要挂载目录。
 
 接下来是设置子模块自动maven和docker构建，目前只能是指定某一子模块进行构建，我也没看到，递归构建子模块的选项
-
+　　解决办法：当你指定用父项目进行构建时，需要在其pom文件中把packaging改为pom，如果你是需要每个子模块都执行mvn命令的话，注意不要选择并行构建，并行构建只会构建父模块，不会把你的build指定具体到每个模块执行。
+    
 jenkins默认用户是uid=1000，你也可以在启动容器时使用-u更改，当显示
 ```
 I/O exception (java.io.IOException) caught when processing request to {}->unix://localhost:80: Permission denied
