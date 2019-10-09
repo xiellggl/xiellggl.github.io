@@ -59,7 +59,7 @@ jenkins的插件下载慢，在线下如果不行的话，就设置代理，用u
 
 删掉之后就可以用scp上传的云服务器，
 jenkins默认是创建一个jenkins用户启动服务的
-太坑了！！！centos yum装的是1.7.1版本的git，太旧了，jenkins配置git的时候一直出现403 permission deny，我靠，太坑了，虽然一开始有查到可能是git版本的问题，可是这毕竟是yum上面最新的了，并且我换过yun源之后都是这个版本，心里感觉没什么问题！！！直到最后我仔细的看了git官网下面这段话！！！
+太坑了！！！centos yum装的是1.7.1版本的git，太旧了，jenkins配置git的时候一直出现403 permission deny，太坑了，虽然一开始有查到可能是git版本的问题，可是这毕竟是yum上面最新的了，并且我换过yun源之后都是这个版本，心里感觉没什么问题！！！直到最后我仔细的看了git官网下面这段话！！！
 
 ```diff
 Red Hat Enterprise Linux, Oracle Linux, CentOS, Scientific Linux, et al.
