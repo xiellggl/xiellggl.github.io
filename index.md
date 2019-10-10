@@ -85,3 +85,5 @@ I/O exception (java.io.IOException) caught when processing request to {}->unix:/
 这个错误时，表明jenkins镜像对/var/run/docker.sock没有权限，可使用chown 1000:1000 /var/run/docker.sock解决
 
 由于华为云白嫖的服务器快到期了，所以我把服务器的jenkins的home目录，复制了写来，然后把镜像推到了阿里云的registry服务，我一早就想到了这个问题，所以当初才会选择以容器方式来运行jenkins
+
+##mysql
