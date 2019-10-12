@@ -86,6 +86,10 @@ I/O exception (java.io.IOException) caught when processing request to {}->unix:/
 
 由于华为云白嫖的服务器快到期了，所以我把服务器的jenkins的home目录，复制了写来，然后把镜像推到了阿里云的registry服务，我一早就想到了这个问题，所以当初才会选择以容器方式来运行jenkins
 
+## netty
+
+12.4测试的时候，返回响应头的contentType为text/plain，想要实际效果，需改成text/html
+
 ## mysql
    
 
