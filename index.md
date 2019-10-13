@@ -90,6 +90,8 @@ I/O exception (java.io.IOException) caught when processing request to {}->unix:/
 
 12.4测试的时候，返回响应头的contentType为text/plain，想要实际效果，需改成text/html
 
+13章中使用udp实现广播中，bind和bind(0)，bind是指使用自己生成的localAddress，bind(0)是指随机生成不冲突的localAddress使用
+
 ## mysql
    
 
