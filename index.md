@@ -93,5 +93,6 @@ I/O exception (java.io.IOException) caught when processing request to {}->unix:/
 13章中使用udp实现广播中，bind和bind(0)，bind是指使用自己生成的localAddress，bind(0)是指随机生成不冲突的localAddress使用
 
 ## mysql
+表字段尽量设计成not null
    
 
