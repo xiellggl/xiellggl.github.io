@@ -98,8 +98,11 @@ I/O exception (java.io.IOException) caught when processing request to {}->unix:/
 ## 分布式
   ### cap理论
   
+      consistency
+      
   ### base理论
   
 ## 并发编程
+            
    
 
