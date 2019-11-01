@@ -106,6 +106,9 @@ I/O exception (java.io.IOException) caught when processing request to {}->unix:/
    
    同步容器和并发容器的区别
 ## hadoop
+## mysql事务
+   
+   每张表都可以有自己的引擎，MyISAM是不支持事务的，当你测试无法回滚时，可以看一下表引擎
             
    
 
