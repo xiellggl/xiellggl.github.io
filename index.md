@@ -109,6 +109,8 @@ I/O exception (java.io.IOException) caught when processing request to {}->unix:/
 ## mysql事务
    
    每张表都可以有自己的引擎，MyISAM是不支持事务的，当你测试无法回滚时，可以看一下表引擎
+## aop
+   @Around这个advice，不管它有没有返回值，但是必须要方法内部，调用一下 pjp.proceed();否则，Controller 中的接口将没有机会被执行，从而也导致了 @Before这个advice不会被触发
             
    
 
