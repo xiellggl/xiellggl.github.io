@@ -11,7 +11,7 @@
 1. 使用静态路由，并设置context.setRouteHost(null);防止SimpleHostRoutingFilter对结果覆盖
 2. 依旧使用service id进行路由，不过在进入到下一个route类型filter之前设置,然后在ResponseFilter中补回
 
-下面给出第二种方法实现
+下面给出第二种方法实现  
 
 在进入到下一个route类型filter之前设置
 ```diff
