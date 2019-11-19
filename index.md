@@ -105,6 +105,8 @@ I/O exception (java.io.IOException) caught when processing request to {}->unix:/
 ## 并发编程
    
    同步容器和并发容器的区别
+   
+   sleep() 方法被中断后会清除中断标记
 ## hadoop
 ## mysql
 ### 事务
