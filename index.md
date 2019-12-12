@@ -116,6 +116,11 @@ I/O exception (java.io.IOException) caught when processing request to {}->unix:/
    order by field 自定义排序
 ## aop
    @Around这个advice，不管它有没有返回值，但是必须要方法内部，调用一下 pjp.proceed();否则，Controller 中的接口将没有机会被执行，从而也导致了 @Before这个advice不会被触发
+## spark
+//设置属性
+System.setProperty("hadoop.home.dir", "D:\\IdeaProjects\\ScalaTest")
+
+//在项目的configurations中配置environment variables为HADOOP_HOME=D:\\IdeaProjects\\ScalaTest，也可以
 
             
    
